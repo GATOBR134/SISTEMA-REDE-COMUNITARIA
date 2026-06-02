@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enviar Evento</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: linear-gradient(to bottom, #eaf4ff, #d6ebff);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            background-color: white;
+            padding: 40px;
+            position: relative;
+            min-height: 100vh;
+        }
+
+        .btn-voltar {
+            position: absolute;
+            top: 40px;
+            left: 40px;
+            text-decoration: none;
+            background-color: #1565c0;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 12px;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .btn-voltar:hover {
+            background-color: #0d47a1;
+            transform: scale(1.05);
+        }
+
+        .titulo-container {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 50px;
+            margin-top: 20px;
+        }
+
+        .titulo-container h1 {
+            border: 2px solid #000;
+            border-radius: 40px;
+            padding: 15px 60px;
+            font-size: 40px;
+            color: #1565c0;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .form-container {
+            max-width: 800px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .campo-linha {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .campo-linha label {
+            font-size: 22px;
+            font-weight: bold;
+            color: #0d47a1;
+            min-width: 150px;
+            text-align: right;
+        }
+
+        .campo-linha input, 
+        .campo-linha textarea {
+            flex-grow: 1;
+            border: none;
+            border-bottom: 2px solid #000;
+            font-size: 18px;
+            padding: 5px 10px;
+            outline: none;
+            background: transparent;
+        }
+
+        .categoria-container {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-top: 10px;
+        }
+
+        .categoria-container label.main-label {
+            font-size: 22px;
+            font-weight: bold;
+            color: #0d47a1;
+            min-width: 150px;
+            text-align: right;
+        }
+
+        .opcoes-categoria {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .opcao {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 18px;
+            color: #333;
+        }
+
+        .opcao input[type="radio"] {
+            width: 18px;
+            height: 18px;
+        }
+
+        .upload-secao {
+            margin-top: 30px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .upload-secao h2 {
+            font-size: 22px;
+            color: #0d47a1;
+            text-transform: uppercase;
+        }
+
+        .upload-box {
+            width: 300px;
+            height: 200px;
+            border: 2px solid #000;
+            border-radius: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #f9f9f9;
+            cursor: pointer;
+            overflow: hidden;
+        }
+
+        .upload-box img {
+            max-width: 80px;
+            opacity: 0.5;
+        }
+
+        .botao-enviar-container {
+            display: flex;
+            justify-content: center;
+            margin-top: 40px;
+        }
+
+        .btn-enviar {
+            border: 2px solid #000;
+            background-color: white;
+            color: #000;
+            padding: 10px 40px;
+            border-radius: 25px;
+            font-size: 22px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: 0.3s;
+            text-transform: uppercase;
+        }
+
+        .btn-enviar:hover {
+            background-color: #1565c0;
+            color: white;
+            border-color: #1565c0;
+        }
+
+        .mensagem {
+            text-align: center;
+            margin-top: 20px;
+            font-size: 20px;
+            color: #2e7d32;
+            display: none;
+        }
+
+        /* Estilo para esconder o input file original e usar a box */
+        #input-file {
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <a href="index (2).html" class="btn-voltar">VOLTAR</a>
+
+        <div class="titulo-container">
+            <h1>ENVIE SEU EVENTO</h1>
+        </div>
+
+        <form id="formEvento" class="form-container">
+            
+            <div class="campo-linha">
+                <label>NOME:</label>
+                <input type="text" id="nome" required>
+            </div>
+
+            <div class="campo-linha">
+                <label>DESCRIÇÃO:</label>
+                <input type="text" id="descricao" required>
+            </div>
+
+            <div class="campo-linha">
+                <label>ORGANIZADORES:</label>
+                <input type="text" id="organizadores" required>
+            </div>
+
+            <div class="categoria-container">
+                <label class="main-label">CATEGORIA:</label>
+                <div class="opcoes-categoria">
+                    <label class="opcao"><input type="radio" name="categoria" value="Educacao" checked> EDUCAÇÃO</label>
+                    <label class="opcao"><input type="radio" name="categoria" value="Saude"> SAÚDE</label>
+                    <label class="opcao"><input type="radio" name="categoria" value="Cultura"> CULTURA</label>
+                    <label class="opcao"><input type="radio" name="categoria" value="Outros"> OUTROS</label>
+                </div>
+            </div>
+
+            <div class="upload-secao">
+                <h2>UPLOAD DA IMAGEM:</h2>
+                <label for="input-file" class="upload-box" id="upload-label">
+                    <img src="https://cdn-icons-png.flaticon.com/512/126/126477.png" alt="Upload Icon" id="preview-icon">
+                    <img src="" id="image-preview" style="display:none; width: 100%; height: 100%; object-fit: cover;">
+                </label>
+                <input type="file" id="input-file" accept="image/*">
+            </div>
+
+            <div class="botao-enviar-container">
+                <button type="submit" class="btn-enviar">ENVIAR</button>
+            </div>
+
+            <div class="mensagem" id="mensagem">
+                Evento enviado com sucesso!
+            </div>
+
+        </form>
+    </div>
+
+    <script>
+        const form = document.getElementById("formEvento");
+        const mensagem = document.getElementById("mensagem");
+        const inputFile = document.getElementById("input-file");
+        const imagePreview = document.getElementById("image-preview");
+        const previewIcon = document.getElementById("preview-icon");
+
+        // Preview da imagem
+        inputFile.addEventListener("change", function() {
+            const file = this.files[0];
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    imagePreview.src = e.target.result;
+                    imagePreview.style.display = "block";
+                    previewIcon.style.display = "none";
+                }
+                reader.readAsDataURL(file);
+            }
+        });
+
+        form.addEventListener("submit", function (event) {
+            event.preventDefault();
+            mensagem.style.display = "block";
+            
+            // Simular envio
+            setTimeout(() => {
+                alert("Evento enviado com sucesso!");
+                form.reset();
+                imagePreview.style.display = "none";
+                previewIcon.style.display = "block";
+                mensagem.style.display = "none";
+            }, 500);
+        });
+    </script>
+
+</body>
+
+</html>

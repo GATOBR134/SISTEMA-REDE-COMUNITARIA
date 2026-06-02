@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rede Comunitária - Página Inicial</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #f0f7ff;
+            min-height: 100vh;
+            color: #0d47a1;
+        }
+
+        /* BANNER PRINCIPAL */
+        .hero {
+            width: 100%;
+            height: 400px;
+            background: linear-gradient(rgba(21, 101, 192, 0.7), rgba(21, 101, 192, 0.7)), url('assets/community.jpg');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        }
+
+        .hero h1 {
+            font-size: 60px;
+            text-shadow: 2px 2px 10px rgba(0,0,0,0.5);
+            margin-bottom: 10px;
+            letter-spacing: 3px;
+        }
+
+        .hero p {
+            font-size: 24px;
+            font-weight: 300;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1400px;
+            margin: auto;
+            padding: 40px 20px;
+        }
+
+        /* NAVEGAÇÃO / HEADER */
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 60px;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .botao1 a {
+            background-color: #1565c0;
+            color: white;
+            text-decoration: none;
+            padding: 18px 45px;
+            border-radius: 50px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 22px;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+            transition: 0.3s;
+        }
+
+        .botao1 a:hover {
+            background-color: #0d47a1;
+            transform: scale(1.05);
+        }
+
+        /* TEXTOS PRINCIPAIS */
+        .mainText {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            margin-bottom: 80px;
+            flex-wrap: wrap;
+        }
+
+        .mainCard {
+            background-color: white;
+            width: 500px;
+            padding: 40px;
+            border-radius: 30px;
+            border-left: 10px solid #1565c0;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+            transition: 0.3s;
+        }
+
+        .mainCard:hover {
+            transform: translateY(-5px);
+        }
+
+        .mainCard h2 {
+            color: #1565c0;
+            font-size: 28px;
+            margin-bottom: 20px;
+        }
+
+        .mainCard p {
+            font-size: 18px;
+            line-height: 1.8;
+            color: #444;
+        }
+
+        /* SEÇÃO EVENTOS */
+        .today {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 40px;
+        }
+
+        .today h2 {
+            background-color: #1565c0;
+            color: white;
+            padding: 15px 60px;
+            border-radius: 40px;
+            font-size: 32px;
+            box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
+        }
+
+        .events-container {
+            display: flex;
+            align-items: center;
+            gap: 30px;
+            background: white;
+            padding: 40px;
+            border-radius: 40px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+        }
+
+        .images {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            flex-grow: 1;
+        }
+
+        .event-img-wrapper {
+            position: relative;
+            overflow: hidden;
+            border-radius: 20px;
+            height: 250px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+        }
+
+        .event-img-wrapper img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: 0.5s;
+        }
+
+        .event-img-wrapper:hover img {
+            transform: scale(1.1);
+        }
+
+        .event-tag {
+            position: absolute;
+            bottom: 15px;
+            left: 15px;
+            background: rgba(21, 101, 192, 0.9);
+            color: white;
+            padding: 8px 15px;
+            border-radius: 10px;
+            font-weight: bold;
+            font-size: 14px;
+        }
+
+        /* BOTÃO SETA */
+        .botao2 a {
+            background-color: #1565c0;
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-shadow: 0 8px 20px rgba(21, 101, 192, 0.3);
+            transition: 0.3s;
+            flex-shrink: 0;
+        }
+
+        .botao2 a:hover {
+            transform: scale(1.1) rotate(5deg);
+            background-color: #0d47a1;
+        }
+
+        .botao2 img {
+            width: 50px;
+            filter: brightness(0) invert(1);
+        }
+    </style>
+</head>
+
+<body>
+    <header class="hero">
+        <h1>REDE COMUNITÁRIA</h1>
+        <p>Conectando pessoas, fortalecendo laços e celebrando a vida local.</p>
+    </header>
+
+    <div class="container">
+        <div class="header">
+            <div class="botao1">
+                <a href="TelaDeCadatro.html">
+                    <p>DIVULGAR NOVO EVENTO</p>
+                </a>
+            </div>
+            <p style="font-size: 20px; color: #666;">Explore o que está acontecendo no seu bairro!</p>
+        </div>
+
+        <div class="mainText">
+            <div class="mainCard">
+                <h2>O que é um Evento Comunitário?</h2>
+                <p>São momentos mágicos onde vizinhos se tornam amigos. Desde feiras de troca até festivais culturais, cada evento é uma oportunidade de fortalecer nossa identidade local.</p>
+            </div>
+
+            <div class="mainCard">
+                <h2>Por que participar?</h2>
+                <p>Participar é investir no seu bem-estar e no da sua região. Você descobre talentos locais, apoia o comércio do bairro e ajuda a construir uma rede de apoio real e presencial.</p>
+            </div>
+        </div>
+
+        <div class="today">
+            <h2>DESTAQUES DE HOJE</h2>
+        </div>
+
+        <div class="events-container">
+            <div class="images">
+                <div class="event-img-wrapper">
+                    <img src="assets/festival.jpg" alt="Festival Cultural">
+                    <span class="event-tag">FESTIVAL CULTURAL</span>
+                </div>
+                <div class="event-img-wrapper">
+                    <img src="assets/esports.jpg" alt="Torneio de E-sports">
+                    <span class="event-tag">TORNEIO GAMER</span>
+                </div>
+                <div class="event-img-wrapper">
+                    <img src="assets/sports.jpg" alt="Evento Esportivo">
+                    <span class="event-tag">ESPORTE NA PRAÇA</span>
+                </div>
+            </div>
+
+            <div class="botao2">
+                <a href="TodosOsEventos.html" title="Ver todos os eventos">
+                    <img src="https://cdn-icons-png.flaticon.com/512/271/271228.png" alt="Ver Mais">
+                </a>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>

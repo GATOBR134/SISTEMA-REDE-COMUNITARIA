@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todos os Eventos - Rede Comunitária</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(to bottom, #eaf4ff, #d7ebff);
+            min-height: 100vh;
+            padding: 50px 20px;
+            color: #333;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1400px;
+            margin: auto;
+        }
+
+        .header-nav {
+            display: flex;
+            align-items: center;
+            margin-bottom: 40px;
+            justify-content: center;
+            position: relative;
+        }
+
+        .btn-voltar {
+            text-decoration: none;
+            background-color: #1565c0;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 15px;
+            font-weight: bold;
+            position: absolute;
+            left: 0;
+            transition: 0.3s;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+
+        .btn-voltar:hover {
+            background-color: #0d47a1;
+            transform: scale(1.05);
+        }
+
+        .header h1 {
+            background-color: #1565c0;
+            color: white;
+            padding: 20px 60px;
+            border-radius: 50px;
+            font-size: 42px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+            letter-spacing: 1px;
+        }
+
+        .cards {
+            display: flex;
+            justify-content: center;
+            align-items: stretch;
+            gap: 40px;
+            flex-wrap: wrap;
+        }
+
+        .card1 {
+            background-color: white;
+            width: 350px;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
+            transition: 0.3s;
+            border: 3px solid #90caf9;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .card1:hover {
+            transform: translateY(-8px);
+        }
+
+        .card1 img {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+            border-bottom: 4px solid #42a5f5;
+        }
+
+        .card1 ul {
+            padding: 25px;
+            list-style-type: none;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .card1 li {
+            margin-bottom: 15px;
+            font-size: 17px;
+            color: #0d47a1;
+            background-color: #e3f2fd;
+            padding: 10px;
+            border-radius: 8px;
+        }
+
+        .card1 li:last-child {
+            margin-bottom: 0;
+        }
+
+        .card1 li strong {
+            color: #1565c0;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="header-nav">
+            <a href="index.html" class="btn-voltar">VOLTAR</a>
+            <div class="header">
+                <h1>Informações dos Eventos</h1>
+            </div>
+        </div>
+
+        <section class="cards">
+
+            <div class="card1">
+                <img src="assets/festival.jpg" alt="Festival Cultural Comunitário">
+                <ul>
+                    <li><strong>Data:</strong> 24 de Junho de 2026</li>
+                    <li>
+                        <strong>Descrição:</strong> Prepare-se para a mais autêntica celebração junina da comunidade! Com o tema "Bem-vindos ao Brasil", este evento trará toda a alegria e tradição das festas de São João. Desfrute de comidas típicas, música ao vivo com sanfona, danças de quadrilha, brincadeiras tradicionais e um ambiente decorado com bandeirinhas e balões. Uma festa para todas as idades, fortalecendo os laços comunitários e celebrando nossa cultura!
+                    </li>
+                    <li><strong>Categoria:</strong> Festival Cultural Comunitário</li>
+                    <li><strong>Organizadores:</strong> Associação Cultural Viva Brasil e Comunidade Local</li>
+                </ul>
+            </div>
+
+            <div class="card1">
+                <img src="assets/gaming.jpg" alt="Gaming Tournament">
+                <ul>
+                    <li><strong>Data:</strong> 15 e 16 de Julho de 2026</li>
+                    <li>
+                        <strong>Descrição:</strong> O momento chegou! Junte-se ao "Gaming Tournament 2026", um evento épico de e-sports que reunirá os melhores jogadores da região. Prepare-se para dois dias intensos de competição, estratégia e muita adrenalina. Haverá torneios de diversos jogos populares e prêmios incríveis para os campeões. Traga seus amigos e mostre suas habilidades!
+                    </li>
+                    <li><strong>Categoria:</strong> Competição de E-sports / Evento Gamer</li>
+                    <li><strong>Organizadores:</strong> Liga de Gamers Comunitários e Patrocinadores Locais de Tecnologia</li>
+                </ul>
+            </div>
+
+            <div class="card1">
+                <img src="assets/sports.jpg" alt="Conferência ODS">
+                <ul>
+                    <li><strong>Data:</strong> 10 a 12 de Setembro de 2026</li>
+                    <li>
+                        <strong>Descrição:</strong> Participe da 1ª Conferência Nacional dos Objetivos de Desenvolvimento Sustentável (ODS), um evento voltado para discutir ações em prol de um futuro mais justo e sustentável, com palestras, workshops e painéis de debate sobre temas sociais e ambientais. Uma oportunidade única para aprender, compartilhar e contribuir para um mundo melhor.
+                    </li>
+                    <li><strong>Categoria:</strong> Conferência / Sustentabilidade e Desenvolvimento Social</li>
+                    <li><strong>Organizadores:</strong> Comitê Nacional ODS e Instituições de Ensino e Pesquisa</li>
+                </ul>
+            </div>
+
+
+
+        </section>
+    </div>
+</body>
+
+</html>
